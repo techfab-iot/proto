@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option go_package="github.com/techfab-iot/go-proto/projects/smart_light_example";
+package projects.smart_light_example;
+
+enum Resource {
+    RESOURCE_UNSPECIFIED = 0;
+    RESOURCE_SET_LIGHT_RELAY = 1;
+}
