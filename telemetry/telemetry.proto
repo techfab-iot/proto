@@ -135,6 +135,7 @@ enum NetworkType {
     NETWORK_TYPE_AWS_IOT_MQTT = 1;
     NETWORK_TYPE_KORE = 2;
     NETWORK_TYPE_CHIRPSTACK = 3;
+    NETWORK_TYPE_AWS_IOT_LORAWAN = 4;
 }
 
 message Record {
