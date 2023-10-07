@@ -142,7 +142,7 @@ message Record {
     Measurement measurement = 1;
     string name = 2 [deprecated = true];
     Unit unit = 3;
-    uint64 time = 4;
+    int64 time = 4;
     double value = 5;
     string string_value = 6;
     bool bool_value = 7;
@@ -153,7 +153,7 @@ message TelemetryPack {
     repeated Record records = 1;
     Measurement base_measurement = 2;
     string base_name = 3 [deprecated = true];
-    uint64 base_time = 4;
+    int64 base_time = 4;
     Unit base_unit = 5;
     NetworkType network_type = 6;
     bytes network_id = 7;
