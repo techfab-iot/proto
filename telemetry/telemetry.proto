@@ -59,6 +59,7 @@ enum Measurement {
     MEASUREMENT_LUMINOUS_FLUX = 48;         // lumen
     MEASUREMENT_LUMINOUS_INTENSITY = 49;    // candela
     MEASUREMENT_BRIGHTENING = 50;           // Ratio (/)
+    MEASUREMENT_SWITCH = 51;
 }
 
 enum Unit {
