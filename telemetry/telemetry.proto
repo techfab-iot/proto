@@ -56,6 +56,9 @@ enum Measurement {
     MEASUREMENT_POWER_FACTOR = 45;          // Ratio (/)
     MEASUREMENT_LOG = 46;
     MEASUREMENT_FREE_HEAP_SIZE = 47;        // B
+    MEASUREMENT_LUMINOUS_FLUX = 48;         // lumen
+    MEASUREMENT_LUMINOUS_INTENSITY = 49;    // candela
+    MEASUREMENT_DIMMING = 50;               // Ratio (/)
 }
 
 enum Unit {
