@@ -60,6 +60,7 @@ enum Measurement {
     MEASUREMENT_LUMINOUS_INTENSITY = 49;    // candela
     MEASUREMENT_BRIGHTENING = 50;           // Ratio (/)
     MEASUREMENT_SWITCH = 51;
+    MEASUREMENT_CONFIG = 52;
 }
 
 enum Unit {
