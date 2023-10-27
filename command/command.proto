@@ -18,6 +18,7 @@ message Trigger {
     TriggerType type = 1;
     double value = 2;
     repeated double range = 3;
+    telemetry.Measurement measurement = 4;
 }
 
 message Command {
