@@ -6,9 +6,13 @@ package command;
 import "telemetry/telemetry.proto";
 
 enum TriggerType {
+    option allow_alias = true;
+
     TRIGGER_TYPE_UNSPECIFIED = 0;
     TRIGGER_TYPE_VALUE = 1;
+    TRIGGER_TYPE_GREATER_THAN_OR_EQUAL = 2;
     TRIGGER_TYPE_MIN = 2;
+    TRIGGER_TYPE_LESS_THAN_OR_EQUAL = 3;
     TRIGGER_TYPE_MAX = 3;
     TRIGGER_TYPE_DELTA = 4;
     TRIGGER_TYPE_RANGE = 5;

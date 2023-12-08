@@ -4,6 +4,8 @@ option go_package="github.com/techfab-iot/go-proto/telemetry";
 package telemetry;
 
 enum Measurement {
+    option allow_alias = true;
+
     MEASUREMENT_UNSPECIFIED = 0;
 
     // ThingsML based measurements
@@ -58,6 +60,7 @@ enum Measurement {
     MEASUREMENT_FREE_HEAP_SIZE = 47;        // B
     MEASUREMENT_LUMINOUS_FLUX = 48;         // lumen
     MEASUREMENT_LUMINOUS_INTENSITY = 49;    // candela
+    MEASUREMENT_BRIGHTESS = 50;             // Ratio (/)
     MEASUREMENT_BRIGHTENING = 50;           // Ratio (/)
     MEASUREMENT_SWITCH = 51;
     MEASUREMENT_CONFIG = 52;
