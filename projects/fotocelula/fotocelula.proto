@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package="github.com/techfab-iot/go-proto/projects/fotocelula";
+package projects.fotocelula;
+
+enum Resource {
+    RESOURCE_UNSPECIFIED = 0;
+    RESOURCE_RESET = 1;
+    RESOURCE_SET_LIGHT = 2;
+    RESOURCE_SET_DEFAULT_BRIGHTNESS = 3;
+    RESOURCE_BRIGHTNESS_SCHEDULE = 4;
+    RESOURCE_CLEAR_BRIGHTNESS_SCHEDULE = 5;
+    RESOURCE_CLEAR_ALL_BRIGHTNESS_SCHEDULES = 6;
+    RESOURCE_SET_MANUAL_MODE = 7;
+}
