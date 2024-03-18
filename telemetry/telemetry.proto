@@ -64,7 +64,7 @@ enum Measurement {
     MEASUREMENT_BRIGHTENING = 50;           // Ratio (/)
     MEASUREMENT_SWITCH = 51;
     MEASUREMENT_CONFIG = 52;
-    MEASUREMENT_IRRADIANCE = 52;            // W/m2
+    MEASUREMENT_IRRADIANCE = 53;            // W/m2
 }
 
 enum Unit {
