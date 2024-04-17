@@ -160,6 +160,7 @@ message Record {
     bool bool_value = 7;
     bytes data_value = 8;
     Severity severity = 9;
+    uint32 alert_id = 10;
 }
 
 message TelemetryPack {
