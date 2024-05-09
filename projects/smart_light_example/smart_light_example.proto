@@ -6,4 +6,5 @@ package projects.smart_light_example;
 enum Resource {
     RESOURCE_UNSPECIFIED = 0;
     RESOURCE_SET_LIGHT_RELAY = 1;
+    RESOURCE_SET_NAME = 2;
 }
