@@ -65,6 +65,13 @@ enum Measurement {
     MEASUREMENT_SWITCH = 51;
     MEASUREMENT_CONFIG = 52;
     MEASUREMENT_IRRADIANCE = 53;            // W/m2
+
+    // METADATA
+    MEASUREMENT_FIRMWARE_VERSION = 54;
+    MEASUREMENT_HARDWARE_VERSION = 55;
+    MEASUREMENT_HARDWARE_ID = 56;
+    MEASUREMENT_MANUFACTURING_DATE = 57;
+    MEASUREMENT_DEVICE_NAME = 58;
 }
 
 enum Unit {
@@ -148,6 +155,12 @@ enum Severity {
     SEVERITY_UNSPECIFIED = 0;
     SEVERITY_LOW = 1;
     SEVERITY_HIGH = 2;
+}
+
+message SemVer {
+    int32 major = 1;
+    int32 minor = 2;
+    int32 patch = 3;
 }
 
 message Record {
