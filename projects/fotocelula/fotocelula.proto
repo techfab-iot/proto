@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package="github.com/techfab-iot/go-proto/projects/fotocelula";
+option go_package="github.com/vitor-mariano/go-proto/projects/fotocelula";
 package projects.fotocelula;
 
 enum Resource {

@@ -1,0 +1,56 @@
+on:
+  push:
+    tags: ["*"]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout proto
+        uses: actions/checkout@v4
+        with:
+          path: proto
+      - name: Checkout c-proto
+        uses: actions/checkout@v4
+        with:
+          repository: vitor-mariano/c-proto
+          path: c-proto
+          token: ${{ secrets.GH_PAT }}
+      - name: Checkout go-proto
+        uses: actions/checkout@v4
+        with:
+          repository: vitor-mariano/go-proto
+          path: go-proto
+          token: ${{ secrets.GH_PAT }}
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.21.1"
+      - name: Install Linux dependencies
+        run: |
+          sudo apt install -y \
+          protobuf-compiler protobuf-c-compiler libprotobuf-dev libprotoc-dev
+      - run: go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+      - name: Build and deploy proto in C
+        run: |
+          protoc --proto_path ./proto --c_out=./c-proto/main/proto/ ./proto/**/*.proto
+          cd ./c-proto
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit --allow-empty -m "build: atualiza proto para a versão ${{ github.ref_name }}"
+          git push
+          git tag -a ${{ github.ref_name }} -m "${{ github.ref_name }}"
+          git push origin ${{ github.ref_name }}
+      - name: Build and deploy proto in Go
+        run: |
+          protoc --proto_path ./proto --go_out ./go-proto --go_opt paths=source_relative \
+          ./proto/**/*.proto ./proto/projects/**/*.proto
+
+          cd ./go-proto
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit --allow-empty -m "build: atualiza proto para a versão ${{ github.ref_name }}"
+          git push
+          git tag -a ${{ github.ref_name }} -m "${{ github.ref_name }}"
+          git push origin ${{ github.ref_name }}

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package="github.com/techfab-iot/go-proto/command";
+option go_package="github.com/vitor-mariano/go-proto/command";
 package command;
 
 import "telemetry/telemetry.proto";
