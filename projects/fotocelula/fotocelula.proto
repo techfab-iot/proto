@@ -5,7 +5,7 @@ package projects.fotocelula;
 
 enum Resource {
     RESOURCE_UNSPECIFIED = 0;
-    RESOURCE_RESET = 1;
+    RESOURCE_FACTORY_RESET = 1;
     RESOURCE_SET_LIGHT = 2;
     RESOURCE_SET_DEFAULT_BRIGHTNESS = 3;
     RESOURCE_BRIGHTNESS_SCHEDULE = 4;
@@ -14,6 +14,7 @@ enum Resource {
     RESOURCE_SET_MANUAL_MODE = 7;
     RESOURCE_SET_UPLINK_FREQUENCY = 8;
     RESOURCE_SET_NAME = 9;
+    RESOURCE_REBOOT = 10;
 }
 
 enum Alert {
