@@ -31,8 +31,11 @@ jobs:
       - run: go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
       - name: Build and deploy proto in C
         run: |
-          protoc --proto_path ./proto --c_out=./c-proto/main/proto/ ./proto/**/*.proto
+          protoc --proto_path ./proto --c_out=./c-proto/main/proto/ \
+          ./proto/**/*.proto ./proto/projects/**/*.proto
+
           cd ./c-proto
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .
