@@ -39,10 +39,12 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit --allow-empty -m "build: atualiza proto para a versão ${{ github.ref_name }}"
+          version=${{ github.ref_name }}
+          ref_name=${version//v/}
+          git commit --allow-empty -m "build: atualiza proto para a versão ${ref_name}"
           git push
-          git tag -a ${{ github.ref_name }} -m "${{ github.ref_name }}"
-          git push origin ${{ github.ref_name }}
+          git tag -a ${ref_name} -m "${ref_name}"
+          git push origin ${ref_name}
       - name: Build and deploy proto in Go
         run: |
           protoc --proto_path ./proto --go_out ./go-proto --go_opt paths=source_relative \
