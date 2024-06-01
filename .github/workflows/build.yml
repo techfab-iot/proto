@@ -41,7 +41,8 @@ jobs:
           git add .
           git commit --allow-empty -m "build: atualiza proto para a versão ${{ github.ref_name }}"
           git push
-          git tag -a ${{ github.ref_name }} -m "${{ github.ref_name }}"
+          ref_name=${${{ github.ref_name }}//v/}
+          git tag -a ${ref_name} -m "${ref_name}"
           git push origin ${{ github.ref_name }}
       - name: Build and deploy proto in Go
         run: |
