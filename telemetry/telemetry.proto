@@ -3,81 +3,73 @@ syntax = "proto3";
 option go_package="github.com/vitor-mariano/go-proto/telemetry";
 package telemetry;
 
-enum Measurement {
+enum Resource {
     option allow_alias = true;
 
-    MEASUREMENT_UNSPECIFIED = 0;
-
-    // ThingsML based measurements
-    MEASUREMENT_TEMPERATURE = 1;            // Cel
-    MEASUREMENT_HUMIDITY = 2;               // %RH
-    MEASUREMENT_LATITUDE = 3;               // Lat
-    MEASUREMENT_LONGITUDE = 4;              // Lon
-    MEASUREMENT_ALTITUDE = 5;               // m
-    MEASUREMENT_POWER = 6;                  // W
-    MEASUREMENT_PRESSURE = 7;               // Pa
-    MEASUREMENT_ANGLE = 8;                  // rad
-    MEASUREMENT_LENGTH = 9;                 // m
-    MEASUREMENT_BREADTH = 10;               // m
-    MEASUREMENT_HEIGHT = 11;                // m
-    MEASUREMENT_WEIGHT = 12;                // kg
-    MEASUREMENT_THICKNESS = 13;             // m
-    MEASUREMENT_DISTANCE = 14;              // m
-    MEASUREMENT_AREA = 15;                  // m2
-    MEASUREMENT_VOLUME = 16;                // m3
-    MEASUREMENT_VELOCITY = 17;              // m/s
-    MEASUREMENT_ELECTRIC_CURRENT = 18;      // A
-    MEASUREMENT_ELECTRIC_POTENTIAL = 19;    // V
-    MEASUREMENT_ELECTRIC_RESISTANCE = 20;   // Ohm
-    MEASUREMENT_ILLUMINANCE = 21;           // lx
-    MEASUREMENT_ACCELERATION_X = 22;        // m/s2
-    MEASUREMENT_ACCELERATION_Y = 23;        // m/s2
-    MEASUREMENT_ACCELERATION_Z = 24;        // m/s2
-    MEASUREMENT_HEADING = 25;               // rad
-    MEASUREMENT_CO_CONCENTRATION = 26;      // ppm
-    MEASUREMENT_CO2_CONCENTRATION = 27;     // ppm
-    MEASUREMENT_SOUND = 28;                 // dB
-    MEASUREMENT_FREQUENCY = 29;             // Hz
-    MEASUREMENT_BATTERY_LEVEL = 30;         // %EL
-    MEASUREMENT_BATTERY_VOLTAGE = 31;       // V
-    MEASUREMENT_RADIUS = 32;                // m
-    MEASUREMENT_BATTERY_LEVEL_LOW = 33;     // Ratio (/)
-    MEASUREMENT_COMPASS_X = 34;             // T
-    MEASUREMENT_COMPASS_Y = 35;             // T
-    MEASUREMENT_COMPASS_Z = 36;             // T
-    MEASUREMENT_READ_SWITCH = 37;           // Ratio (/)
-    MEASUREMENT_PRESENCE = 38;
-    MEASUREMENT_COUNTER = 39;
-
-    // Custom measurements
-    MEASUREMENT_INTERNAL_TEMPERATURE = 40;  // Celsius
-    MEASUREMENT_MOISTURE = 41;
-    MEASUREMENT_APPARENT_POWER = 42;        // VA
-    MEASUREMENT_ACCUMULATED_POWER = 43;     // J
-    MEASUREMENT_REACTIVE_POWER = 44;        // VAR
-    MEASUREMENT_POWER_FACTOR = 45;          // Ratio (/)
-    MEASUREMENT_LOG = 46;
-    MEASUREMENT_FREE_HEAP_SIZE = 47;        // B
-    MEASUREMENT_LUMINOUS_FLUX = 48;         // lumen
-    MEASUREMENT_LUMINOUS_INTENSITY = 49;    // candela
-    MEASUREMENT_BRIGHTESS = 50;             // Ratio (/)
-    MEASUREMENT_BRIGHTENING = 50;           // Ratio (/)
-    MEASUREMENT_SWITCH = 51;
-    MEASUREMENT_CONFIG = 52;
-    MEASUREMENT_IRRADIANCE = 53;            // W/m2
-
-    // METADATA
-    MEASUREMENT_FIRMWARE_VERSION = 54;
-    MEASUREMENT_HARDWARE_VERSION = 55;
-    MEASUREMENT_HARDWARE_ID = 56;
-    MEASUREMENT_MANUFACTURING_DATE = 57;
-    MEASUREMENT_DEVICE_NAME = 58;
+    RESOURCE_UNSPECIFIED = 0;
+    RESOURCE_TEMPERATURE = 1;            // Cel
+    RESOURCE_HUMIDITY = 2;               // %RH
+    RESOURCE_LATITUDE = 3;               // Lat
+    RESOURCE_LONGITUDE = 4;              // Lon
+    RESOURCE_ALTITUDE = 5;               // m
+    RESOURCE_POWER = 6;                  // W
+    RESOURCE_PRESSURE = 7;               // Pa
+    RESOURCE_ANGLE = 8;                  // rad
+    RESOURCE_LENGTH = 9;                 // m
+    RESOURCE_BREADTH = 10;               // m
+    RESOURCE_HEIGHT = 11;                // m
+    RESOURCE_WEIGHT = 12;                // kg
+    RESOURCE_THICKNESS = 13;             // m
+    RESOURCE_DISTANCE = 14;              // m
+    RESOURCE_AREA = 15;                  // m2
+    RESOURCE_VOLUME = 16;                // m3
+    RESOURCE_VELOCITY = 17;              // m/s
+    RESOURCE_ELECTRIC_CURRENT = 18;      // A
+    RESOURCE_ELECTRIC_POTENTIAL = 19;    // V
+    RESOURCE_ELECTRIC_RESISTANCE = 20;   // Ohm
+    RESOURCE_ILLUMINANCE = 21;           // lx
+    RESOURCE_ACCELERATION_X = 22;        // m/s2
+    RESOURCE_ACCELERATION_Y = 23;        // m/s2
+    RESOURCE_ACCELERATION_Z = 24;        // m/s2
+    RESOURCE_HEADING = 25;               // rad
+    RESOURCE_CO_CONCENTRATION = 26;      // ppm
+    RESOURCE_CO2_CONCENTRATION = 27;     // ppm
+    RESOURCE_SOUND = 28;                 // dB
+    RESOURCE_FREQUENCY = 29;             // Hz
+    RESOURCE_BATTERY_LEVEL = 30;         // %EL
+    RESOURCE_BATTERY_VOLTAGE = 31;       // V
+    RESOURCE_RADIUS = 32;                // m
+    RESOURCE_BATTERY_LEVEL_LOW = 33;     // Ratio (/)
+    RESOURCE_COMPASS_X = 34;             // T
+    RESOURCE_COMPASS_Y = 35;             // T
+    RESOURCE_COMPASS_Z = 36;             // T
+    RESOURCE_READ_SWITCH = 37;           // Ratio (/)
+    RESOURCE_PRESENCE = 38;
+    RESOURCE_COUNTER = 39;
+    RESOURCE_INTERNAL_TEMPERATURE = 40;  // Celsius
+    RESOURCE_MOISTURE = 41;
+    RESOURCE_APPARENT_POWER = 42;        // VA
+    RESOURCE_ACCUMULATED_POWER = 43;     // J
+    RESOURCE_REACTIVE_POWER = 44;        // VAR
+    RESOURCE_POWER_FACTOR = 45;          // Ratio (/)
+    RESOURCE_LOG = 46;
+    RESOURCE_FREE_HEAP_SIZE = 47;        // B
+    RESOURCE_LUMINOUS_FLUX = 48;         // lumen
+    RESOURCE_LUMINOUS_INTENSITY = 49;    // candela
+    RESOURCE_BRIGHTESS = 50;             // Ratio (/)
+    RESOURCE_BRIGHTENING = 50;           // Ratio (/)
+    RESOURCE_SWITCH = 51;
+    RESOURCE_CONFIG = 52;
+    RESOURCE_IRRADIANCE = 53;            // W/m2
+    RESOURCE_FIRMWARE_VERSION = 54;
+    RESOURCE_HARDWARE_VERSION = 55;
+    RESOURCE_HARDWARE_ID = 56;
+    RESOURCE_MANUFACTURING_DATE = 57;
+    RESOURCE_DEVICE_NAME = 58;
 }
 
 enum Unit {
     UNIT_UNSPECIFIED = 0;
-
-    // SenML units
     UNIT_METER = 1;
     UNIT_KILOGRAM = 2;
     UNIT_GRAM = 3;
@@ -137,18 +129,16 @@ enum Unit {
     UNIT_BEAT_PER_MINUTE = 57;
     UNIT_BEAT = 58;
     UNIT_SIEMENS_PER_METER = 59;
-
-    // Custom units
     UNIT_PART_PER_MILLION = 60;
     UNIT_VOLT_AMPERE = 61;
 }
 
 enum NetworkType {
     NETWORK_TYPE_UNSPECIFIED = 0;
-    NETWORK_TYPE_AWS_IOT_MQTT = 1;
-    NETWORK_TYPE_KORE = 2;
-    NETWORK_TYPE_CHIRPSTACK = 3;
-    NETWORK_TYPE_AWS_IOT_LORAWAN = 4;
+    NETWORK_TYPE_MQTT_1 = 1;
+    NETWORK_TYPE_LORAWAN_1 = 2;
+    NETWORK_TYPE_LORAWAN_2 = 3;
+    NETWORK_TYPE_LORAWAN_3 = 4;
 }
 
 enum Severity {
@@ -164,9 +154,7 @@ message SemVer {
 }
 
 message Record {
-    Measurement measurement = 1;
-    string name = 2 [deprecated = true];
-    Unit unit = 3;
+    Resource resource = 1;
     int64 time = 4;
     double value = 5;
     string string_value = 6;
@@ -174,15 +162,21 @@ message Record {
     bytes data_value = 8;
     Severity severity = 9;
     uint32 alert_id = 10;
+    int64 int_value = 11;
+
+    // Development purpose only
+    string name = 2;
+    Unit unit = 3;
 }
 
 message TelemetryPack {
     repeated Record records = 1;
-    Measurement base_measurement = 2;
-    string base_name = 3 [deprecated = true];
+    Resource base_resource = 2;
     int64 base_time = 4;
-    Unit base_unit = 5;
     NetworkType network_type = 6;
     bytes network_id = 7;
-    Severity base_severity = 8;
+
+    // Development purpose only
+    string base_name = 3;
+    Unit base_unit = 5;
 }
