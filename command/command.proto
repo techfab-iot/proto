@@ -35,6 +35,7 @@ message Command {
     Trigger trigger = 7;
     string cron = 8;
     uint32 duration = 9;
+    int64 int_value = 10;
 }
 
 message CommandPack {
