@@ -23,6 +23,7 @@ message Trigger {
     double value = 2;
     repeated double range = 3;
     telemetry.Resource resource = 4;
+    int64 int_value = 5;
 }
 
 message Command {
