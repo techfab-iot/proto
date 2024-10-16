@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option go_package="github.com/vitor-mariano/go-proto/projects/concentradora";
+package projects.concentradora;
+
+enum Alert {
+    ALERT_UNSPECIFIED = 0;
+    ALERT_NO_VOLTAGE = 1;
+    ALERT_LOW_VOLTAGE = 2;
+    ALERT_HIGH_VOLTAGE = 3;
+    ALERT_HIGH_INTERNAL_TEMPERATURE = 4;
+    ALERT_HIGH_EXTERNAL_TEMPERATURE = 5;
+}
