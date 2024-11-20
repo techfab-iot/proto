@@ -68,6 +68,11 @@ enum Resource {
     RESOURCE_DEVICE_NAME = 58;
     RESOURCE_CONNECTED_NETWORK = 59;
     RESOURCE_CONNECTED = 60;
+    RESOURCE_N_CONCENTRATION = 61;        // ppm
+    RESOURCE_P_CONCENTRATION = 62;        // ppm
+    RESOURCE_K_CONCENTRATION = 63;        // ppm
+    RESOURCE_CONDUCTIVITY = 64;           // S/m
+    RESOURCE_PH = 65;                     // pH
 }
 
 enum Unit {
