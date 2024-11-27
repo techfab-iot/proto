@@ -73,6 +73,7 @@ enum Resource {
     RESOURCE_K_CONCENTRATION = 63;        // ppm
     RESOURCE_CONDUCTIVITY = 64;           // S/m
     RESOURCE_PH = 65;                     // pH
+    RESOURCE_MESH_LEVEL = 66;
 }
 
 enum Unit {
