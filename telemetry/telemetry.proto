@@ -153,6 +153,7 @@ enum Severity {
     SEVERITY_UNSPECIFIED = 0;
     SEVERITY_LOW = 1;
     SEVERITY_HIGH = 2;
+    SEVERITY_URGENT = 3;
 }
 
 message SemVer {
