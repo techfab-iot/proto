@@ -72,73 +72,8 @@ enum Resource {
     RESOURCE_P_CONCENTRATION = 62;        // ppm
     RESOURCE_K_CONCENTRATION = 63;        // ppm
     RESOURCE_CONDUCTIVITY = 64;           // S/m
-    RESOURCE_PH = 65;                     // pH
+    RESOURCE_PH = 65;
     RESOURCE_MESH_LEVEL = 66;
-}
-
-enum Unit {
-    UNIT_UNSPECIFIED = 0;
-    UNIT_METER = 1;
-    UNIT_KILOGRAM = 2;
-    UNIT_GRAM = 3;
-    UNIT_SECOND = 4;
-    UNIT_AMPERE = 5;
-    UNIT_KELVIN = 6;
-    UNIT_CANDELA = 7;
-    UNIT_MOLE = 8;
-    UNIT_HERTZ = 9;
-    UNIT_RADIAN = 10;
-    UNIT_STERADIAN = 11;
-    UNIT_NEWTON = 12;
-    UNIT_PASCAL = 13;
-    UNIT_JOULE = 14;
-    UNIT_WATT = 15;
-    UNIT_COULOMB = 16;
-    UNIT_VOLT = 17;
-    UNIT_FARAD = 18;
-    UNIT_OHM = 19;
-    UNIT_SIEMENS = 20;
-    UNIT_WEBER = 21;
-    UNIT_TESLA = 22;
-    UNIT_HENRY = 23;
-    UNIT_DEGREES_CELSIUS = 24;
-    UNIT_LUMEN = 25;
-    UNIT_LUX = 26;
-    UNIT_BECQUEREL = 27;
-    UNIT_GRAY = 28;
-    UNIT_SIEVERT = 29;
-    UNIT_KATAL = 30;
-    UNIT_SQUARE_METER = 31;
-    UNIT_CUBIC_METER = 32;
-    UNIT_LITER = 33;
-    UNIT_METER_PER_SECOND = 34;
-    UNIT_METER_PER_SQUARE_SECOND = 35;
-    UNIT_CUBIC_METER_PER_SECOND = 36;
-    UNIT_LITER_PER_SECOND = 37;
-    UNIT_WATT_PER_SQUARE_METER = 38;
-    UNIT_CANDELA_PER_SQUARE_METER = 39;
-    UNIT_BIT = 40;
-    UNIT_BIT_PER_SECOND = 41;
-    UNIT_BYTE = 42;
-    UNIT_BYTE_PER_SECOND = 43;
-    UNIT_LATITUDE = 44;
-    UNIT_LONGITUDE = 45;
-    UNIT_PH = 46;
-    UNIT_DECIBEL = 47;
-    UNIT_DECIBEL_WATT = 48;
-    UNIT_BEL = 49;
-    UNIT_COUNT = 50;
-    UNIT_RATIO = 51;
-    UNIT_RELATIVE_HUMIDITY_PERCENTAGE = 52;
-    UNIT_ENERGY_LEVEL_PERCENTAGE = 53;
-    UNIT_ENERGY_LEVEL_SECONDS_REMAINING = 54;
-    UNIT_RATE_PER_SECOND = 55;
-    UNIT_RATE_PER_MINUTE = 56;
-    UNIT_BEAT_PER_MINUTE = 57;
-    UNIT_BEAT = 58;
-    UNIT_SIEMENS_PER_METER = 59;
-    UNIT_PART_PER_MILLION = 60;
-    UNIT_VOLT_AMPERE = 61;
 }
 
 enum NetworkType {
@@ -172,10 +107,6 @@ message Record {
     Severity severity = 9;
     uint32 alert_id = 10;
     int64 int_value = 11;
-
-    // Development purpose only
-    string name = 2;
-    Unit unit = 3;
 }
 
 message TelemetryPack {
@@ -184,8 +115,4 @@ message TelemetryPack {
     int64 base_time = 4;
     NetworkType network_type = 6;
     bytes network_id = 7;
-
-    // Development purpose only
-    string base_name = 3;
-    Unit base_unit = 5;
 }
