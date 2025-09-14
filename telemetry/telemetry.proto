@@ -56,7 +56,7 @@ enum Resource {
     RESOURCE_FREE_HEAP_SIZE = 47;        // B
     RESOURCE_LUMINOUS_FLUX = 48;         // lumen
     RESOURCE_LUMINOUS_INTENSITY = 49;    // candela
-    RESOURCE_BRIGHTESS = 50;             // Ratio (/)
+    RESOURCE_BRIGHTNESS = 50;            // Ratio (/)
     RESOURCE_BRIGHTENING = 50;           // Ratio (/)
     RESOURCE_SWITCH = 51;
     RESOURCE_CONFIG = 52;
