@@ -75,7 +75,6 @@ enum Resource {
     RESOURCE_PH = 65;
     RESOURCE_MESH_LEVEL = 66;
     RESOURCE_PRECIPITATION = 67;          // mm
-    RESOURCE_WIND_DIRECTION = 68;         // deg
 }
 
 enum NetworkType {
