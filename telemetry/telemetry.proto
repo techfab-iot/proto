@@ -75,6 +75,7 @@ enum Resource {
     RESOURCE_PH = 65;
     RESOURCE_MESH_LEVEL = 66;
     RESOURCE_PRECIPITATION = 67;          // mm
+    RESOURCE_SIGNAL_STRENGTH = 68;        // dBm
 }
 
 enum NetworkType {
