@@ -76,6 +76,20 @@ enum Resource {
     RESOURCE_MESH_LEVEL = 66;
     RESOURCE_PRECIPITATION = 67;          // mm
     RESOURCE_SIGNAL_STRENGTH = 68;        // dBm
+    RESOURCE_BOOT_COUNT = 75;             // int_value, NVS meshlink/bootCnt
+    RESOURCE_NETWORK_INTERFACE = 80;      // int_value = NetworkInterfaceType
+    RESOURCE_LORA_RSSI = 90;              // value in dBm, measured by the gateway on the received frame
+    RESOURCE_LORA_SNR = 91;               // value in dB, measured by the gateway on the received frame
+    RESOURCE_LORA_DEVICE_ADDR = 92;       // string_value, LoRa frame deviceAddr in hex (8 digits), proprietary address of Meshlink raw LoRa
+}
+
+enum NetworkInterfaceType {
+    NETWORK_INTERFACE_UNSPECIFIED = 0;
+    NETWORK_INTERFACE_MESH = 1;       // WiFi mesh (tef-mesh-lite)
+    NETWORK_INTERFACE_WIFI = 2;       // WiFi STA direto ao roteador
+    NETWORK_INTERFACE_ETHERNET = 3;   // Ethernet cabeada
+    NETWORK_INTERFACE_4G_LTE = 4;     // Modem celular 4G/LTE via PPP
+    NETWORK_INTERFACE_LORA = 5;       // LoRa via gateway
 }
 
 enum NetworkType {
@@ -84,6 +98,7 @@ enum NetworkType {
     NETWORK_TYPE_LORAWAN_1 = 2;
     NETWORK_TYPE_LORAWAN_2 = 3;
     NETWORK_TYPE_LORAWAN_3 = 4;
+    NETWORK_TYPE_MESHLINK_LORA_1 = 5;  // Meshlink proprietary raw LoRa (HMAC, custom framing); not LoRaWAN
 }
 
 enum Severity {
