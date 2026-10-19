@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package="github.com/vitor-mariano/go-proto/projects/concentradora";
+option go_package="github.com/techfab-iot/go-proto/projects/concentradora";
 package projects.concentradora;
 
 enum Alert {
