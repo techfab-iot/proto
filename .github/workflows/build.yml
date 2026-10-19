@@ -12,13 +12,13 @@ jobs:
       - name: Checkout c-proto
         uses: actions/checkout@v4
         with:
-          repository: vitor-mariano/c-proto
+          repository: techfab-iot/c-proto
           path: c-proto
           token: ${{ secrets.GH_PAT }}
       - name: Checkout go-proto
         uses: actions/checkout@v4
         with:
-          repository: vitor-mariano/go-proto
+          repository: techfab-iot/go-proto
           path: go-proto
           token: ${{ secrets.GH_PAT }}
       - uses: actions/setup-go@v5
