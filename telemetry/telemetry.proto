@@ -76,11 +76,34 @@ enum Resource {
     RESOURCE_MESH_LEVEL = 66;
     RESOURCE_PRECIPITATION = 67;          // mm
     RESOURCE_SIGNAL_STRENGTH = 68;        // dBm
+    RESOURCE_RESET_REASON = 71;           // int_value = ResetReason (esp_reset_reason_t)
     RESOURCE_BOOT_COUNT = 75;             // int_value, NVS meshlink/bootCnt
     RESOURCE_NETWORK_INTERFACE = 80;      // int_value = NetworkInterfaceType
     RESOURCE_LORA_RSSI = 90;              // value in dBm, measured by the gateway on the received frame
     RESOURCE_LORA_SNR = 91;               // value in dB, measured by the gateway on the received frame
     RESOURCE_LORA_DEVICE_ADDR = 92;       // string_value, LoRa frame deviceAddr in hex (8 digits), proprietary address of Meshlink raw LoRa
+}
+
+// Aligned with esp_reset_reason_t (ESP-IDF), so the firmware sends the value
+// of esp_reset_reason() as is. Sent in Record.int_value; string_value is not
+// used for this resource.
+enum ResetReason {
+    RESET_REASON_UNKNOWN = 0;
+    RESET_REASON_POWERON = 1;      // Power-on reset
+    RESET_REASON_EXT = 2;          // External pin reset
+    RESET_REASON_SW = 3;           // Software reset via esp_restart()
+    RESET_REASON_PANIC = 4;        // Software reset due to an exception or panic
+    RESET_REASON_INT_WDT = 5;      // Interrupt watchdog
+    RESET_REASON_TASK_WDT = 6;     // Task watchdog
+    RESET_REASON_WDT = 7;          // Other watchdog
+    RESET_REASON_DEEPSLEEP = 8;    // Woke from deep sleep
+    RESET_REASON_BROWNOUT = 9;     // Brownout reset
+    RESET_REASON_SDIO = 10;        // Reset over SDIO
+    RESET_REASON_USB = 11;         // Reset by USB peripheral
+    RESET_REASON_JTAG = 12;        // Reset by JTAG
+    RESET_REASON_EFUSE = 13;       // Reset due to an eFuse error
+    RESET_REASON_PWR_GLITCH = 14;  // Reset due to a power glitch
+    RESET_REASON_CPU_LOCKUP = 15;  // Reset due to CPU lockup
 }
 
 enum NetworkInterfaceType {
