@@ -95,16 +95,12 @@ enum Resource {
     RESOURCE_LORA_DEVICE_ADDR = 92;       // string_value, LoRa frame deviceAddr in hex (8 digits), proprietary address of Meshlink raw LoRa
     RESOURCE_MODEM_MCC = 93;              // int_value, Mobile Country Code (ITU E.212), e.g. 724 = Brazil
     RESOURCE_MODEM_MNC = 94;              // int_value, Mobile Network Code (ITU E.212), identifies the carrier within the country
-    // IDs 95 to 99 are used by the Meshlink proto (LoRa gateway and endnode
-    // counters) and are intentionally not defined here. New Techfab resources
-    // start at 100 so the two protos never assign the same number to
-    // different data.
-    RESOURCE_MODEM_APN = 100;             // string_value, APN in use by the 4G modem (never the PAP credentials)
-    RESOURCE_NTP_LAST_SYNC = 101;         // int_value, Unix time in seconds of the last successful NTP sync (0 = never)
-    RESOURCE_AP_SSID = 102;               // string_value, SSID of the soft AP created by the device (never its password)
-    RESOURCE_AP_CHANNEL = 103;            // int_value, Wi-Fi channel of the soft AP (1 to 13)
-    RESOURCE_AP_STATION_COUNT = 104;      // int_value, number of stations associated to the soft AP
-    RESOURCE_AP_STATION_LIST = 105;       // string_value, associated station MACs as "aa:bb:cc:dd:ee:ff" separated by commas; truncated at the last whole MAC that fits the record
+    RESOURCE_MODEM_APN = 95;             // string_value, APN in use by the 4G modem (never the PAP credentials)
+    RESOURCE_NTP_LAST_SYNC = 96;         // int_value, Unix time in seconds of the last successful NTP sync (0 = never)
+    RESOURCE_AP_SSID = 97;               // string_value, SSID of the soft AP created by the device (never its password)
+    RESOURCE_AP_CHANNEL = 98;            // int_value, Wi-Fi channel of the soft AP (1 to 13)
+    RESOURCE_AP_STATION_COUNT = 99;      // int_value, number of stations associated to the soft AP
+    RESOURCE_AP_STATION_LIST = 100;       // string_value, associated station MACs as "aa:bb:cc:dd:ee:ff" separated by commas; truncated at the last whole MAC that fits the record
 }
 
 // Aligned with esp_reset_reason_t (ESP-IDF), so the firmware sends the value
