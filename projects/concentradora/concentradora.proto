@@ -3,6 +3,13 @@ syntax = "proto3";
 option go_package="github.com/techfab-iot/go-proto/projects/concentradora";
 package projects.concentradora;
 
+// Commands the concentrator accepts. Numbers match the values the firmware
+// already handles, so REBOOT keeps the value 10 it had in the fotocelula enum.
+enum Resource {
+    RESOURCE_UNSPECIFIED = 0;
+    RESOURCE_REBOOT = 10;
+}
+
 enum Alert {
     ALERT_UNSPECIFIED = 0;
     ALERT_NO_VOLTAGE = 1;
